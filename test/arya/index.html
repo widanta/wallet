@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Kategori Rekening</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Manajemen Kategori Rekening</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#add-category">Tambah Kategori</a></li>
+                <li><a href="#help">Bantuan</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Dashboard -->
+        <section id="dashboard" class="content-section">
+            <h2>Daftar Kategori Rekening</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nama Kategori</th>
+                        <th>Deskripsi</th>
+                        <th>Status</th>
+                        <th>Tanggal Dibuat</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>Operasional</td>
+                        <td>Pengeluaran harian</td>
+                        <td>Aktif</td>
+                        <td>2024-12-28</td>
+                        <td>
+                            <button class="btn-edit">Edit</button>
+                            <button class="btn-delete">Hapus</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Tambah Kategori -->
+        <section id="add-category" class="content-section">
+            <h2>Tambah Kategori Baru</h2>
+            <form>
+                <label for="category-id">ID Kategori:</label>
+                <input type="text" id="category-id" placeholder="Masukkan ID Kategori" required>
+
+                <label for="category-name">Nama Kategori:</label>
+                <input type="text" id="category-name" placeholder="Masukkan Nama Kategori" required>
+
+                <label for="description">Deskripsi:</label>
+                <textarea id="description" placeholder="Masukkan Deskripsi"></textarea>
+
+                <label for="status">Status:</label>
+                <select id="status">
+                    <option value="aktif">Aktif</option>
+                    <option value="tidak-aktif">Tidak Aktif</option>
+                </select>
+
+                <button type="submit">Simpan</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Manajemen Kategori Rekening</p>
+    </footer>
+</body>
+</html>\
+

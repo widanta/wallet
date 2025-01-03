@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Manajemen Dompet Rekening</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header class="header">
+            <h1>Manajemen Dompet Rekening</h1>
+            <nav>
+                <ul>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#add-account">Tambah Rekening</a></li>
+                    <li><a href="#help">Bantuan</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="dashboard">
+                <h2>Daftar Rekening</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID Rekening</th>
+                            <th>Nama Pemilik</th>
+                            <th>Saldo</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>123456789</td>
+                            <td>ZHEN</td>
+                            <td>Rp. 10,000,000</td>
+                            <td>Aktif</td>
+                            <td>
+                                <button class="btn-edit">Edit</button>
+                                <button class="btn-delete">Hapus</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="add-account">
+                <h2>Tambah Rekening Baru</h2>
+                <form>
+                    <label for="account-id">ID Rekening:</label>
+                    <input type="text" id="account-id" required />
+
+                    <label for="owner-name">Nama Pemilik:</label>
+                    <input type="text" id="owner-name" required />
+
+                    <label for="balance">Saldo Awal:</label>
+                    <input type="number" id="balance" required />
+
+                    <label for="status">Status:</label>
+                    <select id="status" required>
+                        <option value="aktif">Aktif</option>
+                        <option value="non-aktif">Non-Aktif</option>
+                    </select>
+
+                    <button type="submit">Tambah Rekening</button>
+                </form>
+            </section>
+        </main>
+
+
+        <footer>
+            <p>© 2024 Manajemen Dompet Rekening. All Rights Reserved.</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengelolaan Data Pemasukan dan Pengeluaran</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f8f8f8;
+        }
+
+        .form-section {
+            margin: 20px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+
+        .danger {
+            background-color: #e74c3c;
+        }
+
+        .danger:hover {
+            background-color: #c0392b;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 30%;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .modal-content button {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .btn-no {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+        <h1>Menghapus Data Pemasukan dan Pengeluaran</h1>
+            <button type="button" onclick="updateCategory()" style="height: fit-content;">Edit</button>
+        </div>
+
+        <div id="deleteCategoryScreen" class="hidden">
+            <h2>Hapus Data Kategori</h2>
+            <form id="deleteCategoryForm">
+                <label for="deleteCategory">Pilih Kategori yang Akan Dihapus:</label>
+                <select id="deleteCategory">
+                    <option value="pemasukan">Pemasukan</option>
+                    <option value="pengeluaran">Pengeluaran</option>
+                </select>
+
+                <button type="button" onclick="deleteCategory()" class="danger">Hapus</button>
+                <button type="button" onclick="hideDeleteCategoryScreen()">Batal</button>
+            </form>
+        </div>
+
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Kategori</th>
+                    <th>Deskripsi</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data akan ditambahkan di sini -->
+                <tr>
+                    <td>01</td>
+                    <td>Makanan</td>
+                    <td>Pengeluaran</td>
+                    <td><a href="#">Edit</a> | <a href="#" onclick="showModal('Makanan')">Hapus</a></td>
+                 </tr>
+                 <tr>
+                    <td>02</td>
+                    <td>Hiburan</td>
+                    <td>Biaya Reakreasi</td>
+                    <td><a href="#">Edit</a> | <a href="#" onclick="showModal('Hiburan')">Hapus</a></td>
+                 </tr>
+                 <tr>
+                    <td>03</td>
+                    <td>Kesehatan</td>
+                    <td>Biaya Kesehatan</td>
+                    <td><a href="#">Edit</a> | <a href="#" onclick="showModal('Kesehatan')">Hapus</a></td>
+                 </tr>
+                 <tr>
+                    <td>04</td>
+                    <td>Pendidikan</td>
+                    <td>Biaya Pendidikan</td>
+                    <td><a href="#">Edit</a> | <a href="#" onclick="showModal('Pendidikan')">Hapus</a></td>
+                 </tr>
+                 <tr>
+                    <td>05</td>
+                    <td>Belanja Bulanan</td>
+                    <td>Biaya Kebutuhan Bulanan</td>
+                    <td><a href="#">Edit</a> | <a href="#" onclick="showModal('Belanja Bulanan')">Hapus</a></td>
+                 </tr>
+                 <tr>
+                    <td>06</td>
+                    <td>Hobi</td>
+                    <td>Biaya untuk hobi dan kegiatan kreatif</td>
+                    <td><a href="#">Edit</a> | <a href="#" onclick="showModal('Hobi')">Hapus</a></td>
+                 </tr>
+                 <tr>
+                    <td>07</td>
+                    <td>Kado</td>
+                    <td>Pengeluaran untuk kado</td>
+                    <td><a href="#">Edit</a> | <a href="#" onclick="showModal('Kado')">Hapus</a></td>
+                 </tr>
+            </tbody>
+        </table>
+
+        <div style="display: flex; width: 100%; justify-content: end; gap: 30px;">
+            
+        <button onclick="showModal('Semua')" class="danger">Hapus</button>
+            <button type="button" onclick="updateCategory()" style="">Simpan</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <p id="modalText">Anda yakin menghapus data ini?</p>
+            <button class="btn-yes" onclick="confirmDelete()">Iya</button>
+            <button class="btn-no" onclick="closeModal()">Tidak</button>
+        </div>
+    </div>
+
+    <script>
+        let data = [];
+        let totalIncome = 0;
+        let totalExpense = 0;
+
+        function showDeleteCategoryScreen() {
+            document.getElementById('deleteCategoryScreen').classList.remove('hidden');
+            document.getElementById('deleteCategoryScreen').classList.add('visible');
+        }
+
+        function hideDeleteCategoryScreen() {
+            document.getElementById('deleteCategoryScreen').classList.remove('visible');
+            document.getElementById('deleteCategoryScreen').classList.add('hidden');
+        }
+
+        function deleteCategory() {
+            const categoryToDelete = document.getElementById('deleteCategory').value;
+
+            // Filter out all data belonging to the selected category
+            data = data.filter(item => item.type !== categoryToDelete);
+
+            updateTable();
+            hideDeleteCategoryScreen();
+            alert(`Kategori "${categoryToDelete}" beserta semua datanya telah dihapus.`);
+        }
+
+        function addData() {
+            const type = document.getElementById('type').value;
+            const description = document.getElementById('description').value;
+            const amount = parseFloat(document.getElementById('amount').value);
+
+            if (!description || isNaN(amount) || amount <= 0) {
+                alert('Harap isi semua field dengan benar.');
+                return;
+            }
+
+            const newData = {
+                type,
+                description,
+                amount
+            };
+
+            data.push(newData);
+            updateTable();
+            resetForm();
+        }
+
+        function updateTable() {
+            const tableBody = document.querySelector('#dataTable tbody');
+            tableBody.innerHTML = '';
+            totalIncome = 0;
+            totalExpense = 0;
+
+            data.forEach((item, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${item.type}</td>
+                    <td>${item.description}</td>
+                    <td>${item.amount}</td>
+                    <td><button onclick="deleteData(${index})">Hapus</button></td>
+                `;
+                tableBody.appendChild(row);
+
+                if (item.type === 'pemasukan') {
+                    totalIncome += item.amount;
+                } else {
+                    totalExpense += item.amount;
+                }
+            });
+
+            document.getElementById('totalIncome').innerText = totalIncome;
+            document.getElementById('totalExpense').innerText = totalExpense;
+            document.getElementById('balance').innerText = totalIncome - totalExpense;
+        }
+
+        function deleteData(index) {
+            data.splice(index, 1);
+            updateTable();
+        }
+
+        function resetForm() {
+            document.getElementById('description').value = '';
+            document.getElementById('amount').value = '';
+        }
+
+
+        // Fungsi untuk menampilkan modal
+        function showModal(category) {
+            const modal = document.getElementById('confirmModal');
+            const modalText = document.getElementById('modalText');
+            modalText.textContent = `Anda yakin menghapus ${category} dari data pengeluaran dan pemasukan?`;
+            modal.style.display = 'block';
+        }
+
+        // Fungsi untuk menutup modal
+        function closeModal() {
+            document.getElementById('confirmModal').style.display = 'none';
+        }
+
+        // Fungsi untuk mengonfirmasi penghapusan
+        function confirmDelete() {
+            alert('Data berhasil dihapus!');
+            closeModal();
+        }
+    </script>
+</body>
+</html>

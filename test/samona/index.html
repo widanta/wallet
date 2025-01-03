@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catatan Pemasukan & Pengeluaran</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Catatan Pemasukan & Pengeluaran</h1>
+    </header>
+
+    <main>
+        <section id="dashboard">
+            <h2>Daftar Catatan</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tanggal</th>
+                        <th>Kategori</th>
+                        <th>Dompet</th>
+                        <th>Jumlah</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2025-01-01</td>
+                        <td>Gaji</td>
+                        <td>Pemasukan</td>
+                        <td>Rp. 5,000,000</td>
+                        <td>
+                            <button class="btn-edit">Edit</button>
+                            <button class="btn-delete">Hapus</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2025-01-02</td>
+                        <td>Hiburan</td>
+                        <td>Pengeluaran</td>
+                        <td>Rp. 1,000,000</td>
+                        <td>
+                            <button class="btn-edit">Edit</button>
+                            <button class="btn-delete">Hapus</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="add-catatan">
+            <h2>Tambah Catatan Baru</h2>
+            <form>
+                <label for="catatan-date">Tanggal:</label>
+                <input type="date" id="catatan-date" required>
+
+                <label for="category">Kategori:</label>
+                <select id="category" required>
+                    <option value="">Pilih Kategori</option>
+                    <option value="gaji">Gaji</option>
+                    <option value="bonus">Bonus</option>
+                    <option value="investasi">Investasi</option>
+                    <option value="makanan">Makanan</option>
+                    <option value="transportasi">Transportasi</option>
+                    <option value="hiburan">Hiburan</option>
+                    <option value="belanja">Belanja</option>
+                    <option value="lainnya">Lainnya</option>
+                </select>
+
+                <label for="wallet">Dompet:</label>
+                <select id="wallet" required>
+                    <option value="">Pilih Dompet</option>
+                    <option value="kas">Pemasukan</option>
+                    <option value="rekening-bank">Pengeluaran</option>
+
+
+                </select>
+
+                <label for="amount">Jumlah:</label>
+                <input type="number" id="amount" required>
+
+                <button type="submit">Simpan</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Wallet All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
+

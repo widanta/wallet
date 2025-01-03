@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengelolaan Data Pemasukan dan Pengeluaran</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f8f8f8;
+        }
+
+        .form-section {
+            margin: 20px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .summary {
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pengelolaan Data Pemasukan dan Pengeluaran</h1>
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Kategori</th>
+                    <th>Deskripsi</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data akan ditambahkan di sini -->
+                 <tr>
+                    <td>01</td>
+                    <td>Makanan</td>
+                    <td>Pengeluaran</td>
+                    <td><a href="#">Edit</a> | <a href="#">Hapus</a></td>
+                 </tr>
+                 <tr>
+                    <td>02</td>
+                    <td>Hiburan</td>
+                    <td>Biaya Reakreasi</td>
+                    <td><a href="#">Edit</a> | <a href="#">Hapus</a></td>
+                 </tr>
+                 <tr>
+                    <td>03</td>
+                    <td>Kesehatan</td>
+                    <td>Biaya Kesehatan</td>
+                    <td><a href="#">Edit</a> | <a href="#">Hapus</a></td>
+                 </tr>
+                 <tr>
+                    <td>04</td>
+                    <td>Pendidikan</td>
+                    <td>Biaya Pendidikan</td>
+                    <td><a href="#">Edit</a> | <a href="#">Hapus</a></td>
+                 </tr>
+                 <tr>
+                    <td>05</td>
+                    <td>Belanja Bulanan</td>
+                    <td>Biaya Kebutuhan Bulanan</td>
+                    <td><a href="#">Edit</a> | <a href="#">Hapus</a></td>
+                 </tr>
+                 <tr>
+                    <td>06</td>
+                    <td>Perawatan</td>
+                    <td>Pengeluaran untuk perawatan tubuh</td>
+                    <td><a href="#">Edit</a> | <a href="#">Hapus</a></td>
+                 </tr>
+                 <tr>
+                    <td>07</td>
+                    <td>Hobi</td>
+                    <td>Biaya untuk hobi dan kegiatan kreatif</td>
+                    <td><a href="#">Edit</a> | <a href="#">Hapus</a></td>
+                 </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        let data = [];
+        let totalIncome = 0;
+        let totalExpense = 0;
+
+        function addData() {
+            const type = document.getElementById('type').value;
+            const description = document.getElementById('description').value;
+            const amount = parseFloat(document.getElementById('amount').value);
+
+            if (!description || isNaN(amount) || amount <= 0) {
+                alert('Harap isi semua field dengan benar.');
+                return;
+            }
+
+            const newData = {
+                type,
+                description,
+                amount
+            };
+
+            data.push(newData);
+            updateTable();
+            resetForm();
+        }
+
+        function updateTable() {
+            const tableBody = document.querySelector('#dataTable tbody');
+            tableBody.innerHTML = '';
+            totalIncome = 0;
+            totalExpense = 0;
+
+            data.forEach((item, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${item.type}</td>
+                    <td>${item.description}</td>
+                    <td>${item.amount}</td>
+                    <td><button onclick="deleteData(${index})">Hapus</button></td>
+                `;
+                tableBody.appendChild(row);
+
+                if (item.type === 'pemasukan') {
+                    totalIncome += item.amount;
+                } else {
+                    totalExpense += item.amount;
+                }
+            });
+
+            document.getElementById('totalIncome').innerText = totalIncome;
+            document.getElementById('totalExpense').innerText = totalExpense;
+            document.getElementById('balance').innerText = totalIncome - totalExpense;
+        }
+
+        function deleteData(index) {
+            data.splice(index, 1);
+            updateTable();
+        }
+
+        function resetForm() {
+            document.getElementById('description').value = '';
+            document.getElementById('amount').value = '';
+        }
+    </script>
+</body>
+</html>

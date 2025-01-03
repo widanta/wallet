@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+        <title>Index</title>
+        <link rel="stylesheet" href="../../../assets/css/vendors/simplebar.css" />
+        <link rel="stylesheet" href="../../../assets/css/style.css" />
+        <link rel="stylesheet" href="../../../assets/css/examples.css" />
+        <link rel="stylesheet" href="../../../assets/css/main.css" />
+        <link rel="stylesheet" href="../../../assets/vendors/simplebar/css/simplebar.css" />
+        <link rel="stylesheet" href="../../../assets/vendors/@coreui/chartjs/css/coreui-chartjs.css" />
+        <link rel="stylesheet" href="../../../assets/fontawesome/css/all.min.css" />
+        <link rel="stylesheet" href="../../../assets/fontawesome/css/regular.min.css" />
+        <link rel="stylesheet" href="../../../assets/fontawesome/css/solid.min.css" />
+        <link rel="stylesheet" href="../../../assets/fontawesome/css/fontawesome.min.css" />
+        <link rel="stylesheet" href="../../../assets/fontawesome/css/brands.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism.css" />
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", "UA-118965717-3");
+            gtag("config", "UA-118965717-5");
+        </script>
+    </head>
+
+    <body>
+        <!-- sidebar -->
+        <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
+            <div class="sidebar-brand d-none d-md-flex">
+                <h2>Wallet</h2>
+            </div>
+            <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
+                <li class="nav-title">Admin</li>
+                <li class="nav-group">
+                    <a class="nav-link nav-group-toggle">
+                        <div class="nav-icon d-flex justify-content-center align-item-center">
+                            <i class="fa-solid fa-users-gear"></i>
+                        </div>
+                        Master Pengguna
+                    </a>
+                    <ul class="nav-group-items compact">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pengguna/index.html">
+                                <div class="nav-icon d-flex justify-content-center align-item-center">
+                                    <i class="fa-solid fa-user-gear"></i>
+                                </div>
+                                Aprove Pengguna
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pengguna/tambah.html">
+                                <div class="nav-icon d-flex justify-content-center align-item-center">
+                                    <i class="fa-solid fa-user-tie"></i>
+                                </div>
+                                Tambah Pengguna
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-title">Kategori</li>
+                <li class="nav-group">
+                    <a class="nav-link nav-group-toggle">
+                        <div class="nav-icon d-flex justify-content-center align-item-center">
+                            <i class="fa-solid fa-cube"></i>
+                        </div>
+                        Kategori Rekening
+                    </a>
+                    <ul class="nav-group-items compact">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../kategori-rekening/index.html">
+                                <div class="nav-icon d-flex justify-content-center align-item-center">
+                                    <i class="fa-solid fa-cubes"></i>
+                                </div>
+                                Mengelola
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-group">
+                    <a class="nav-link nav-group-toggle">
+                        <div class="nav-icon d-flex justify-content-center align-item-center">
+                            <i class="fa-solid fa-cube"></i>
+                        </div>
+                        Kategori Pencatatan
+                    </a>
+                    <ul class="nav-group-items compact">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../kategori/index.html">
+                                <div class="nav-icon d-flex justify-content-center align-item-center">
+                                    <i class="fa-solid fa-cubes"></i>
+                                </div>
+                                Mengelola
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../kategori/tambah.html">
+                                <div class="nav-icon d-flex justify-content-center align-item-center">
+                                    <i class="fa-solid fa-cubes-stacked"></i>
+                                </div>
+                                Tambah
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- end sidebar -->
+        <div class="wrapper d-flex flex-column min-vh-100 bg-light">
+            <!-- navbar -->
+            <header class="header header-sticky mb-4">
+                <div class="container-fluid">
+                    <button class="header-toggler px-md-0 me-md-3" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
+                        <svg class="icon icon-lg">
+                            <use xlink:href="../../../assets/vendors/@coreui/icons/svg/free.svg#cil-menu"></use>
+                        </svg>
+                    </button><a class="header-brand d-md-none" href="#">
+                        <svg width="118" height="46" alt="CoreUI Logo">
+                            <use xlink:href="../../../assets/brand/coreui.svg#full"></use>
+                        </svg></a>
+                    <ul class="header-nav ms-3">
+                        <li class="nav-item">
+                            <a class="nav-link text-capitalize">
+                                Widanta
+                            </a>
+                        </li>
+                        <li class=" nav-item dropdown"><a class="nav-link py-0" data-coreui-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <div class="avatar avatar-md"><img class="avatar-img" src="../../../assets/img/default-image.svg" alt="Default"></div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end pt-0">
+                                <div class="dropdown-header bg-light py-2">
+                                    <div class="fw-semibold">Settings</div>
+                                </div>
+                                <a class="dropdown-item" href="../profile/index.html">
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="../../../login.html">
+                                    Keluar
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </header>
+            <!-- end navbar -->
+            <div class="body flex-grow-1 px-3">
+                <div class="container-fluid mt-3">
+                    <div class="row justify-content-center">
+                        <div class="col-4 d-flex justify-content-center align-items-center">                         
+                            <div class="w-100">
+                                <img src="../../../assets/img/default-image.svg" class="d-flex w-100 border border-info rounded " alt="">
+                                <a href="../../../reset.html" class="mt-3 btn d-flex w-auto btn-outline-info text-center text-dark">
+                                    <span class="my-0 mx-auto">Reset Password</span></a>
+                            </div>
+                        </div>  
+                        <div class="col-8">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <ul class="nav nav-tabs card-header-tabs">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" href="index.html">Biodata</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link text-info" href="edit.html">Ubah Biodata</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link text-danger" type="button" data-coreui-toggle="modal" data-coreui-target="#deleteModal">Hapus Akun</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <form>
+                                                        <label class="form-label fs-5">Biodata Diri</label>
+                                                        <div class="row mb-3">
+                                                            <label for="nama" class="col-sm-2 col-form-label">Nama</label>
+                                                            <div class="col-sm-10">
+                                                                <label for="nama" class="col-sm-2 col-form-label">Widanta</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <label for="jenisKelamin" class="col-sm-2 col-form-label">Jenis Kelamin</label>
+                                                            <div class="col-sm-10 d-flex align-items-center">
+                                                                <label for="jenisKelamin" class="col-sm-2 col-form-label">Laki - Laki</label>
+                                                            </div>
+                                                        </div>
+                                                        <label class="form-label fs-5">Kontak</label>
+                                                        <div class="row mb-3">
+                                                            <label for="email" class="col-sm-2 col-form-label">Email</label>
+                                                            <div class="col-sm-10">
+                                                                <label for="email" class="col-form-label">widanta66@gmail.com</label> 
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <label for="telpon" class="col-sm-2 col-form-label">Telpon</label>
+                                                            <div class="col-sm-10">
+                                                                <label for="telpon" class="col-form-label">087784793721</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex justify-content-end">
+                                                            <a type="submit" href="index.html" class="btn btn-primary">Simpan</a>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <p class="fs-5 text-center">Apakah anda yakin mengapus akun ? <b>Widanta</b></p>
+                                <div class="d-flex justify-content-between mt-3">
+                                    <button type="button" class="btn btn-secondary" data-coreui-dismiss="modal">Tidak</button>
+                                    <a type="button" class="btn btn-danger" href="../../../login.html">Iya</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end content -->
+            </div>
+        </div>
+        <!-- CoreUI and necessary plugins-->
+        <script src="../../../assets/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
+        <script src="../../../assets/vendors/simplebar/js/simplebar.min.js"></script>
+        <script src="../../../assets/vendors/chart.js/js/chart.min.js"></script>
+        <script src="../../../assets/vendors/@coreui/chartjs/js/coreui-chartjs.js"></script>
+        <script src="../../../assets/vendors/@coreui/utils/js/coreui-utils.js"></script>
+        <script src="../../../assets/js/main.js"></script>
+    </body>
+</html>

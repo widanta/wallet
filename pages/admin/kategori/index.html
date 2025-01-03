@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+        <title>Wallet - Kategori Pencatatan</title>
+        <link rel="stylesheet" href="../../../assets/css/vendors/simplebar.css" />
+        <link rel="stylesheet" href="../../../assets/css/style.css" />
+        <link rel="stylesheet" href="../../../assets/css/examples.css" />
+        <link rel="stylesheet" href="../../../assets/css/main.css" />
+        <link rel="stylesheet" href="../../../assets/vendors/simplebar/css/simplebar.css" />
+        <link rel="stylesheet" href="../../../assets/vendors/@coreui/chartjs/css/coreui-chartjs.css" />
+        <link rel="stylesheet" href="../../../assets/fontawesome/css/all.min.css" />
+        <link rel="stylesheet" href="../../../assets/fontawesome/css/regular.min.css" />
+        <link rel="stylesheet" href="../../../assets/fontawesome/css/solid.min.css" />
+        <link rel="stylesheet" href="../../../assets/fontawesome/css/fontawesome.min.css" />
+        <link rel="stylesheet" href="../../../assets/fontawesome/css/brands.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism.css" />
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", "UA-118965717-3");
+            gtag("config", "UA-118965717-5");
+        </script>
+    </head>
+
+    <body>
+        <!-- sidebar -->
+        <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
+            <div class="sidebar-brand d-none d-md-flex">
+                <h2>Wallet</h2>
+            </div>
+            <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
+                <li class="nav-title">Admin</li>
+                <li class="nav-group">
+                    <a class="nav-link nav-group-toggle">
+                        <div class="nav-icon d-flex justify-content-center align-item-center">
+                            <i class="fa-solid fa-users-gear"></i>
+                        </div>
+                        Master Pengguna
+                    </a>
+                    <ul class="nav-group-items compact">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pengguna/index.html">
+                                <div class="nav-icon d-flex justify-content-center align-item-center">
+                                    <i class="fa-solid fa-user-gear"></i>
+                                </div>
+                                Aprove Pengguna
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pengguna/tambah.html">
+                                <div class="nav-icon d-flex justify-content-center align-item-center">
+                                    <i class="fa-solid fa-user-tie"></i>
+                                </div>
+                                Tambah Pengguna
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-title">Kategori</li>
+                <li class="nav-group">
+                    <a class="nav-link nav-group-toggle">
+                        <div class="nav-icon d-flex justify-content-center align-item-center">
+                            <i class="fa-solid fa-cube"></i>
+                        </div>
+                        Kategori Rekening
+                    </a>
+                    <ul class="nav-group-items compact">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../kategori-rekening/index.html">
+                                <div class="nav-icon d-flex justify-content-center align-item-center">
+                                    <i class="fa-solid fa-cubes"></i>
+                                </div>
+                                Mengelola
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-group">
+                    <a class="nav-link nav-group-toggle">
+                        <div class="nav-icon d-flex justify-content-center align-item-center">
+                            <i class="fa-solid fa-cube"></i>
+                        </div>
+                        Kategori Pencatatan
+                    </a>
+                    <ul class="nav-group-items compact">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                <div class="nav-icon d-flex justify-content-center align-item-center">
+                                    <i class="fa-solid fa-cubes"></i>
+                                </div>
+                                Mengelola
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tambah.html">
+                                <div class="nav-icon d-flex justify-content-center align-item-center">
+                                    <i class="fa-solid fa-cubes-stacked"></i>
+                                </div>
+                                Tambah
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- end sidebar -->
+        <div class="wrapper d-flex flex-column min-vh-100 bg-light">
+            <!-- navbar -->
+            <header class="header header-sticky mb-4">
+                <div class="container-fluid">
+                    <button class="header-toggler px-md-0 me-md-3" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
+                        <svg class="icon icon-lg">
+                            <use xlink:href="../../../assets/vendors/@coreui/icons/svg/free.svg#cil-menu"></use>
+                        </svg>
+                    </button><a class="header-brand d-md-none" href="#">
+                        <svg width="118" height="46" alt="CoreUI Logo">
+                            <use xlink:href="../../../assets/brand/coreui.svg#full"></use>
+                        </svg></a>
+                    <ul class="header-nav ms-3">
+                        <li class="nav-item">
+                            <a class="nav-link text-capitalize">
+                                Widanta
+                            </a>
+                        </li>
+                        <li class=" nav-item dropdown"><a class="nav-link py-0" data-coreui-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <div class="avatar avatar-md"><img class="avatar-img" src="../../../assets/img/default-image.svg" alt="Default"></div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end pt-0">
+                                <div class="dropdown-header bg-light py-2">
+                                    <div class="fw-semibold">Settings</div>
+                                </div>
+                                <a class="dropdown-item" href="../prile/index.html">
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="../../../login.html">
+                                    Keluar
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </header>
+            <!-- end navbar -->
+            <div class="body flex-grow-1 px-3">
+                <div class="container-fluid">
+                    <h3 class="text-center mb-3">Pengelolaan Data Pemasukan dan Pengeluaran</h3>
+                    <table id="dataTable" class="table table-bordered table-striped">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>No</th>
+                                <th>Nama Kategori</th>
+                                <th>Deskripsi</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data akan ditambahkan di sini -->
+                            <tr>
+                                <td>01</td>
+                                <td>Makanan</td>
+                                <td>Pengeluaran</td>
+                                <td><a href="#">Edit</a> | <a href="#">Hapus</a></td>
+                            </tr>
+                            <tr>
+                                <td>02</td>
+                                <td>Hiburan</td>
+                                <td>Biaya Reakreasi</td>
+                                <td><a href="#">Edit</a> | <a href="#">Hapus</a></td>
+                            </tr>
+                            <tr>
+                                <td>03</td>
+                                <td>Kesehatan</td>
+                                <td>Biaya Kesehatan</td>
+                                <td><a href="#">Edit</a> | <a href="#">Hapus</a></td>
+                            </tr>
+                            <tr>
+                                <td>04</td>
+                                <td>Pendidikan</td>
+                                <td>Biaya Pendidikan</td>
+                                <td><a href="#">Edit</a> | <a href="#">Hapus</a></td>
+                            </tr>
+                            <tr>
+                                <td>05</td>
+                                <td>Belanja Bulanan</td>
+                                <td>Biaya Kebutuhan Bulanan</td>
+                                <td><a href="#">Edit</a> | <a href="#">Hapus</a></td>
+                            </tr>
+                            <tr>
+                                <td>06</td>
+                                <td>Perawatan</td>
+                                <td>Pengeluaran untuk perawatan tubuh</td>
+                                <td><a href="#">Edit</a> | <a href="#">Hapus</a></td>
+                            </tr>
+                            <tr>
+                                <td>07</td>
+                                <td>Hobi</td>
+                                <td>Biaya untuk hobi dan kegiatan kreatif</td>
+                                <td><a href="#">Edit</a> | <a href="#">Hapus</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- end content -->
+            </div>
+        </div>
+        <!-- CoreUI and necessary plugins-->
+        <script src="../../../assets/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
+        <script src="../../../assets/vendors/simplebar/js/simplebar.min.js"></script>
+        <script src="../../../assets/vendors/chart.js/js/chart.min.js"></script>
+        <script src="../../../assets/vendors/@coreui/chartjs/js/coreui-chartjs.js"></script>
+        <script src="../../../assets/vendors/@coreui/utils/js/coreui-utils.js"></script>
+        <script src="../../../assets/js/main.js"></script>
+    </body>
+</html>
