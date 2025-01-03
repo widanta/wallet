@@ -31,126 +31,18 @@
     </head>
 
     <body>
-        <!-- sidebar -->
-        <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
-            <div class="sidebar-brand d-none d-md-flex">
-                <h2>Wallet</h2>
-            </div>
-            <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
-                <li class="nav-title">Admin</li>
-                <li class="nav-group">
-                    <a class="nav-link nav-group-toggle">
-                        <div class="nav-icon d-flex justify-content-center align-item-center">
-                            <i class="fa-solid fa-users-gear"></i>
-                        </div>
-                        Master Pengguna
-                    </a>
-                    <ul class="nav-group-items compact">
-                        <li class="nav-item">
-                            <a class="nav-link" href="../pengguna/index.html">
-                                <div class="nav-icon d-flex justify-content-center align-item-center">
-                                    <i class="fa-solid fa-user-gear"></i>
-                                </div>
-                                Aprove Pengguna
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../pengguna/tambah.html">
-                                <div class="nav-icon d-flex justify-content-center align-item-center">
-                                    <i class="fa-solid fa-user-tie"></i>
-                                </div>
-                                Tambah Pengguna
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-title">Kategori</li>
-                <li class="nav-group">
-                    <a class="nav-link nav-group-toggle">
-                        <div class="nav-icon d-flex justify-content-center align-item-center">
-                            <i class="fa-solid fa-cube"></i>
-                        </div>
-                        Kategori Rekening
-                    </a>
-                    <ul class="nav-group-items compact">
-                        <li class="nav-item">
-                            <a class="nav-link" href="../kategori-rekening/index.html">
-                                <div class="nav-icon d-flex justify-content-center align-item-center">
-                                    <i class="fa-solid fa-cubes"></i>
-                                </div>
-                                Mengelola
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-group">
-                    <a class="nav-link nav-group-toggle">
-                        <div class="nav-icon d-flex justify-content-center align-item-center">
-                            <i class="fa-solid fa-cube"></i>
-                        </div>
-                        Kategori Pencatatan
-                    </a>
-                    <ul class="nav-group-items compact">
-                        <li class="nav-item">
-                            <a class="nav-link" href="../kategori/index.html">
-                                <div class="nav-icon d-flex justify-content-center align-item-center">
-                                    <i class="fa-solid fa-cubes"></i>
-                                </div>
-                                Mengelola
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../kategori/tambah.html">
-                                <div class="nav-icon d-flex justify-content-center align-item-center">
-                                    <i class="fa-solid fa-cubes-stacked"></i>
-                                </div>
-                                Tambah
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                
-            </ul>
-        </div>
-        <!-- end sidebar -->
         <div class="wrapper d-flex flex-column min-vh-100 bg-light">
-            <!-- navbar -->
-            <header class="header header-sticky mb-4">
-                <div class="container-fluid">
-                    <button class="header-toggler px-md-0 me-md-3" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
-                        <svg class="icon icon-lg">
-                            <use xlink:href="../../../assets/vendors/@coreui/icons/svg/free.svg#cil-menu"></use>
-                        </svg>
-                    </button><a class="header-brand d-md-none" href="#">
-                        <svg width="118" height="46" alt="CoreUI Logo">
-                            <use xlink:href="../../../assets/brand/coreui.svg#full"></use>
-                        </svg></a>
-                    <ul class="header-nav ms-3">
-                        <li class="nav-item">
-                            <a class="nav-link text-capitalize">
-                                Widanta
-                            </a>
-                        </li>
-                        <li class=" nav-item dropdown"><a class="nav-link py-0" data-coreui-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                <div class="avatar avatar-md"><img class="avatar-img" src="../../../assets/img/default-image.svg" alt="Default"></div>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end pt-0">
-                                <div class="dropdown-header bg-light py-2">
-                                    <div class="fw-semibold">Settings</div>
-                                </div>
-                                <a class="dropdown-item" href="../profile/index.html">
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="../../../login.html">
-                                    Keluar
-                                </a>
-                            </div>
-                        </li>
+            <header class="header bg-primary text-white text-center py-3">
+                <h3>Wallet</h3>
+                <nav>
+                    <ul class="nav justify-content-center">
+                        <li class="nav-item"><a class="nav-link text-white" href="../rekening/index.html">Rekening</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="../pencatatan/index.html">Pencatatan</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="../profile/index.html">Profile</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="../../../login.html">Keluar</a></li>
                     </ul>
-                </div>
-
+                </nav>
             </header>
-            <!-- end navbar -->
             <div class="body flex-grow-1 px-3">
                 <div class="container-fluid mt-3">
                     <div class="row justify-content-center">
@@ -186,26 +78,26 @@
                                                         <div class="row mb-3">
                                                             <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                                                             <div class="col-sm-10">
-                                                                <label for="nama" class="col-sm-2 col-form-label">Widanta</label>
+                                                                <label for="nama" class="col-sm-2 col-form-label">danta</label>
                                                             </div>
                                                         </div>
                                                         <div class="row mb-3">
                                                             <label for="jenisKelamin" class="col-sm-2 col-form-label">Jenis Kelamin</label>
                                                             <div class="col-sm-10 d-flex align-items-center">
-                                                                <label for="jenisKelamin" class="col-sm-2 col-form-label">Laki - Laki</label>
+                                                                <label for="jenisKelamin" class="col-sm-2 col-form-label"></label>
                                                             </div>
                                                         </div>
                                                         <label class="form-label fs-5">Kontak</label>
                                                         <div class="row mb-3">
                                                             <label for="email" class="col-sm-2 col-form-label">Email</label>
                                                             <div class="col-sm-10">
-                                                                <label for="email" class="col-form-label">widanta@gmail.com</label> 
+                                                                <label for="email" class="col-form-label">danta@gmail.com</label> 
                                                             </div>
                                                         </div>
                                                         <div class="row mb-3">
                                                             <label for="telpon" class="col-sm-2 col-form-label">Telpon</label>
                                                             <div class="col-sm-10">
-                                                                <label for="telpon" class="col-form-label">087784793721</label>
+                                                                <label for="telpon" class="col-form-label"></label>
                                                             </div>
                                                         </div>
                                                     </form>
@@ -225,7 +117,7 @@
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-body">
-                                <p class="fs-5 text-center">Apakah anda yakin mengapus akun ? <b>Widanta</b></p>
+                                <p class="fs-5 text-center">Apakah anda yakin mengapus akun ? <b>danta</b></p>
                                 <div class="d-flex justify-content-between mt-3">
                                     <button type="button" class="btn btn-secondary" data-coreui-dismiss="modal">Tidak</button>
                                     <a type="button" class="btn btn-danger" href="../../../login.html">Iya</a>
